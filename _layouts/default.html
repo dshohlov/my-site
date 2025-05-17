@@ -2,20 +2,52 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} | {{ site.title }}</title>
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+  <link rel="icon" href="{{ site.baseurl }}/assets/apple-favicon.png">
+  <!-- Google Fonts Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="{{ site.baseurl }}/">Главная</a> |
-      <a href="{{ site.baseurl }}/about">Обо мне</a>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="{{ site.baseurl }}/" class="nav-logo"> {{ site.title }}</a>
+      <ul class="nav-links">
+        <li><a href="{{ site.baseurl }}/">Главная</a></li>
+        <li><a href="{{ site.baseurl }}/blog/">Блог</a></li>
+        <li><a href="{{ site.baseurl }}/stepik/">Stepik</a></li>
+        <li><a href="{{ site.baseurl }}/about/">Обо мне</a></li>
+        <li><a href="{{ site.baseurl }}/contact/">Контакты</a></li>
+      </ul>
+      <button id="theme-toggle" aria-label="Тёмная тема">🌙</button>
     </nav>
   </header>
-
-  <main>
+  <main class="site-main">
     {{ content }}
   </main>
+  <footer class="site-footer">
+    <div>
+      <span>© {{ site.time | date: "%Y" }} {{ site.title }}</span>
+      &nbsp;|&nbsp;
+      <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
+      &nbsp;|&nbsp;
+      <a href="mailto:{{ site.email }}">Почта</a>
+    </div>
+  </footer>
+  <script>
+    // Тёмная тема
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn.onclick = () => {
+      document.body.classList.toggle('dark-theme');
+      themeBtn.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
+      localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+    };
+    // Восстановление темы
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-theme');
+      themeBtn.textContent = '☀️';
+    }
+  </script>
 </body>
 </html>
