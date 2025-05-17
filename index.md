@@ -3,8 +3,13 @@ layout: default
 title: Главная
 ---
 
-# Привет!
+# Добро пожаловать!
 
-Это мой сайт.
+Это мой персональный сайт. Здесь я публикую заметки, статьи и проекты.
 
-![Картинка]({{ site.baseurl }}/assets/image_site.png)
+![Обложка]({{ site.baseurl }}/assets/image_site.png)
+
+- [Обо мне]({{ site.baseurl }}/about)
+- [Контакты]({{ site.baseurl }}/contact)
+- [Заметки]({{ site.baseurl }}/notes)
+- [Блог]({{ site.baseurl }}/blog)
