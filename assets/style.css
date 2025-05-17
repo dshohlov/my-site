@@ -151,9 +151,13 @@ body.dark-theme a:hover {
   letter-spacing: -0.05em;
 }
 .hero-desc {
-  color: #555;
+  color: #111; /* Чёрный текст на светлой */
   font-size: 1.22em;
   margin-bottom: 20px;
+}
+
+body.dark-theme .hero-desc {
+  color: #fff; /* Белый текст на тёмной */
 }
 
 .button-main {
