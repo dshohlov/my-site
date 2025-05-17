@@ -1,18 +1,10 @@
 ---
 layout: default
-title: Мой сайт
+title: Главная
 ---
 
-# Привет!
+# Добро пожаловать
 
-Это мой первый Jekyll-сайт, сделанный на MacBook.  
+Это мой персональный сайт, созданный с помощью Jekyll и GitHub Pages.
 
-## Формула (LaTeX)
-
-$$
-e^{i\\pi} + 1 = 0
-$$
-
-## Картинка
-
-![Обложка](assets/image_site.png)
+![Обложка]({{ site.baseurl }}/assets/image_site.png)
