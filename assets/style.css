@@ -161,3 +161,35 @@ body.dark-theme a:hover {
   .navbar { flex-direction: column; gap: 1em; padding: 8px 0; }
   .nav-links { gap: 0.6em; }
 }
+.button-main {
+  display: inline-block;
+  background: #0071e3;
+  color: #fff !important;
+  padding: 12px 30px;
+  border-radius: 22px;
+  font-size: 1.08em;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  text-decoration: none;
+  margin-top: 12px;
+  transition: background 0.18s;
+}
+.button-main:hover {
+  background: #0051a8;
+  color: #fff;
+}
+.hero-title {
+  font-size: 3em;
+  font-weight: 900;
+  margin-bottom: 8px;
+  letter-spacing: -0.05em;
+}
+.hero-desc {
+  color: #555;
+  font-size: 1.22em;
+  margin-bottom: 20px;
+}
+@media (max-width: 500px) {
+  .hero-title { font-size: 2em; }
+  .button-main { font-size: 0.98em; padding: 10px 18px; }
+}
