@@ -297,16 +297,28 @@ body.dark-theme .button-main {
 
 .button-main:hover,
 .button-main:focus {
-  color: #fff !important;
+  color: #111 !important; /* всегда чёрный текст */
   background: transparent;
   border-color: transparent;
   box-shadow: 0 4px 32px rgba(180,150,255,0.11), 0 0 0 3px rgba(255,180,255,0.10);
   outline: none;
+  text-shadow: 0 1px 7px #fff9, 0 0 2px #0003; /* мягкая белая и тёмная тень для читаемости */
+  font-weight: 800;
 }
+body.dark-theme .button-main:hover,
+body.dark-theme .button-main:focus {
+  color: #111 !important; /* в тёмной теме тоже чёрный */
+  text-shadow: 0 1px 7px #fff7, 0 0 2px #000c;
+}
+
 
 .button-main > * {
   position: relative;
   z-index: 2;
+}
+.button-main::before {
+  /* ... градиент ... */
+  z-index: 0;
 }
 
 @keyframes pastel-rainbow-move {
