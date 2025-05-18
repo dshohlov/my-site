@@ -239,8 +239,8 @@ body.dark-theme .hero-desc {
 }
 .button-main {
   display: inline-block;
-  background: #fff;            /* белый фон */
-  color: #222 !important;      /* чёрный текст */
+  background: #fff;
+  color: #222 !important;
   padding: 12px 30px;
   border-radius: 22px;
   font-size: 1.08em;
@@ -249,7 +249,7 @@ body.dark-theme .hero-desc {
   text-decoration: none;
   margin-top: 12px;
   border: none;
-  border: 2.5px solid #eee;   /* аккуратная рамка */
+  border: 2.5px solid #eee;
   transition: 
     background 0.18s,
     color 0.18s,
@@ -261,32 +261,38 @@ body.dark-theme .hero-desc {
   z-index: 1;
 }
 
-/* Для тёмной темы: белый текст на белой кнопке */
+/* Тёмная тема */
 body.dark-theme .button-main {
   color: #fff !important;
   background: #232336;
   border: 2.5px solid #333;
 }
 
-/* Радужный градиент при наведении */
 .button-main::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
-  background: linear-gradient(90deg,
-    #ff355e, #fffd37, #1fd655, #0095ff, #6e0dd0, #ff355e);
+  /* Пастельный диагональный градиент */
+  background: linear-gradient(135deg,
+    #ffc7d1 0%,   /* нежно-розовый */
+    #ffeebc 20%,  /* нежно-жёлтый */
+    #d6ffd9 50%,  /* мягкий салатовый */
+    #c3e7ff 75%,  /* голубой */
+    #e3cefa 100%  /* сиреневый */
+  );
   opacity: 0;
-  transition: opacity 0.32s, filter 0.21s;
+  transition: opacity 0.38s, filter 0.31s;
   border-radius: 22px;
-  filter: blur(0.5px) saturate(1.15);
+  filter: blur(1px) brightness(1.08) saturate(0.85);  /* тусклая, мягкая радуга */
+  background-size: 220% 220%;
 }
 
-/* Наведение — появление градиента */
+/* Перелив анимацией */
 .button-main:hover::before,
 .button-main:focus::before {
   opacity: 1;
-  animation: rainbow-move 2.2s linear infinite;
+  animation: pastel-rainbow-move 3s linear infinite;
 }
 
 .button-main:hover,
@@ -294,32 +300,25 @@ body.dark-theme .button-main {
   color: #fff !important;
   background: transparent;
   border-color: transparent;
-  box-shadow: 0 4px 32px rgba(255,50,220,0.08), 0 0 0 3px rgba(255,0,170,0.08);
+  box-shadow: 0 4px 32px rgba(180,150,255,0.11), 0 0 0 3px rgba(255,180,255,0.10);
   outline: none;
 }
 
-.button-main span, .button-main svg {
-  position: relative;
-  z-index: 2;
-}
-
-/* Внутренний текст всегда над градиентом */
 .button-main > * {
   position: relative;
   z-index: 2;
 }
 
-@keyframes rainbow-move {
-  0%   { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
+@keyframes pastel-rainbow-move {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
 }
 
-/* Для надписи была всегда читаема */
 .button-main {
   mix-blend-mode: normal;
 }
 .button-main:hover, .button-main:focus {
-  text-shadow: 0 1px 8px #2229, 0 0 2px #fff5;
+  text-shadow: 0 1px 8px #2227, 0 0 2px #fff3;
 }
 body.dark-theme .button-main:hover, body.dark-theme .button-main:focus {
   text-shadow: 0 1px 8px #fff, 0 0 2px #fff;
